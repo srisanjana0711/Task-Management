@@ -1,41 +1,16 @@
 version: '3.8'
 
 services:
-  mysql:
-    image: mysql:8
-    container_name: mysql-db
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: tododb
-      MYSQL_USER: todo_user
-      MYSQL_PASSWORD: todo_password
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-    networks:
-      - todo-network
-
   app:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     container_name: todo-app
     restart: always
-    depends_on:
-      - mysql
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/tododb?allowPublicKeyRetrieval=true&useSSL=false
-      SPRING_DATASOURCE_USERNAME: todo_user
-      SPRING_DATASOURCE_PASSWORD: todo_password
     ports:
-      - "8080:8080"
-    networks:
-      - todo-network
-
-volumes:
-  mysql_data:
-
-networks:
-  todo-network:
+      - "10000:10000" # Render default port
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dpg-cvfbks8fnakc739mi7ag-a.singapore-postgres.render.com:5432/todo_db_izo7
+      SPRING_DATASOURCE_USERNAME: todo_db_izo7_user
+      SPRING_DATASOURCE_PASSWORD: WnK0FUSTpDlw76BP4l7sxsVqFkRlYups
+      PORT: 10000
