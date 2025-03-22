@@ -14,7 +14,7 @@
 
   <groupId>com.example</groupId>
   <artifactId>todo-app</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  
   <name>todo-app</name>
   <description>Spring Boot To-Do Application</description>
 
