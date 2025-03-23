@@ -26,7 +26,7 @@ function renderTasks() {
     const taskList = document.getElementById("taskList");
     taskList.innerHTML = ""; // Clear previous tasks
 
-    fetch("http://localhost:8080/tasks")
+    fetch("https://task-management-tbz6.onrender.com/tasks")  // ✅ Updated URL
         .then(response => response.json())
         .then(tasks => {
             tasks.forEach(task => {
@@ -55,7 +55,7 @@ function renderTasks() {
 
 // ✅ Add a New Task
 function addTask(title, description, status) {
-    fetch("http://localhost:8080/tasks", {
+    fetch("https://task-management-tbz6.onrender.com/tasks", {  // ✅ Updated URL
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -76,46 +76,4 @@ function addTask(title, description, status) {
 
 // ✅ Delete a Task
 function deleteTask(taskId) {
-    fetch(`http://localhost:8080/tasks/${taskId}`, {
-        method: "DELETE",
-    })
-    .then(response => {
-        if (response.ok) {
-            alert("Task deleted successfully!");
-            renderTasks(); // Refresh task list
-        } else {
-            alert("Failed to delete task.");
-        }
-    })
-    .catch(error => console.error("Error deleting task:", error));
-}
-
-// ✅ Edit a Task (Prefill Form)
-function editTask(taskId, title, description, status) {
-    document.getElementById("title").value = title;
-    document.getElementById("description").value = description;
-    document.getElementById("status").checked = status;
-    document.getElementById("taskId").value = taskId; // Store task ID for updating
-}
-
-// ✅ Update an Existing Task
-function updateTask(taskId, title, description, status) {
-    fetch(`http://localhost:8080/tasks/${taskId}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ title, description, status }),
-    })
-    .then(response => {
-        if (response.ok) {
-            alert("Task updated successfully!");
-            document.getElementById("taskForm").reset(); // Clear form
-            document.getElementById("taskId").value = ""; // Reset task ID
-            renderTasks(); // Refresh task list
-        } else {
-            alert("Failed to update task.");
-        }
-    })
-    .catch(error => console.error("Error updating task:", error));
-}
+    fetch(`https://task-management-tbz6.onrender.com/tasks/${taskId}`, {  // ✅
