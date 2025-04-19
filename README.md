@@ -105,7 +105,7 @@ This project is **open-source** under the **MIT License**.
 
 ### **🧑‍💻 Author**
 👤 **Srisanjana Karunamoorthy**  
-🔗 GitHub: [Sanju-07112001](https://github.com/Sanju-07112001)  
+🔗 GitHub: [srisanjana0711](https://github.com/srisanjana0711)  
 🔗 Deployed App: **[Live Demo](https://task-management-tbz6.onrender.com)**  
 
 ---
