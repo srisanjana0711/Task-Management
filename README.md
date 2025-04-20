@@ -110,12 +110,3 @@ This project is **open-source** under the **MIT License**.
 
 ---
 
-### ✅ **Final Step**
-1. **Replace** `YOUR_GITHUB_USERNAME` and `YOUR_REPO_NAME` with your actual GitHub repository details.  
-2. **Push this README.md to GitHub**:  
-```sh
-git add README.md
-git commit -m "Updated README with Render deployment link"
-git push origin master
-```
-
